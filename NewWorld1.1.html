@@ -95,44 +95,76 @@
 
 
 
+
 <script>
   function sawmill() {
-  sawmills =(sawmills + 1)
-  stone = (stone - 1000)
-  money = (money - 1500000)
+    if (money > 1499999 && wood > 1999) {
+        sawmills =(sawmills + 1)
+        wood = (wood - 2000)
+        money = (money - 1500000)
 
+  
+    } else {
+      alert("Not enough resources to build");    
+}
+}
 </script>
+
 
 <script>
   function quarry() {
-  quarries =(quarries + 1)
-  wood = (wood - 2000)
-  money = (money - 1500000)
+    if (money > 1499999 && wood > 1999) {
+        quarries =(quarries + 1)
+        wood = (wood - 2000)
+        money = (money - 1500000)
+
+  
+    } else {
+      alert("Not enough resources to build");    
+}
 }
 </script>
 
 <script>
   function farms() {
-  farm =(farm + 1)
-  wood = (wood - 800)
-  money = (money - 500000)
+    if (money > 499999 && wood > 999) {
+        farm =(farm + 1)
+        wood = (wood - 1000)
+        money = (money - 500000)
+
+  
+    } else {
+      alert("Not enough resources to build");    
+}
 }
 </script>
 
 <script>
   function ironmines() {
-  ironmine =(ironmine + 1)
-  wood = (wood - 3000)
-  stone = (stone - 1000)
-  money = (money - 3500000)
+    if (money > 2499999 && wood > 4999 && stone >2999) {
+        ironmine =(ironmine + 1)
+        wood = (wood - 5000)
+        stone = (stone - 3000)
+        money = (money - 2500000)
+
+  
+    } else {
+      alert("Not enough resources to build");    
+}
 }
 </script>
 
 <script>
   function oildrills() {
-  oildrill =(oildrill + 1)
-  iron = (iron - 1500)
-  money = (money - 4000000)
+    if (money > 2499999 && iron > 2999) {
+        oildrill =(oildrill + 1)
+        irom = (iron - 3000)
+        money = (money - 2500000)
+
+  
+    } else {
+      alert("Not enough resources to build");    
+}
 }
 </script>
 
@@ -221,10 +253,17 @@ setInterval(function() {
 
 <script>
   function recruit() {
-    soldier = (soldier + 100);
-    money = (money - 2500000);
-    pop = (pop - 100);
-    document.getElementById("army").innerHTML = " Troops: " + soldier;
+    if (money > 1499999 && wood > 1999) {
+        soldier =(soldier + 100)
+        pop = (pop - 100)
+        money = (money - 2500000)
+        document.getElementById("army").innerHTML = " Troops: " + soldier;
+
+  
+    } else {
+      alert("Not enough resources to recruit");    
+}
+
 }
 </script>
 
@@ -255,6 +294,10 @@ setInterval(function() {
 
       </div>
 
+<div style = "position:relative; left:5px; top: 390px; ">
+  <button onclick="declare()" id="declare">Declare War on Tooboo Land</button>
+      
+      </div>
 
 <div style = "position:relative; left:5px; top:400px; ">
   <button onclick="invade()" id="invade">Invade</button>
@@ -276,6 +319,7 @@ setInterval(function() {
   document.getElementById("fort").style.visibility = "hidden";
   document.getElementById("prov12").style.visibility = "hidden";
   document.getElementById("a").style.visibility = "hidden";
+  document.getElementById("invade").style.visibility = "hidden";
 
   
   
@@ -285,6 +329,11 @@ setInterval(function() {
 </script>
 
 <script>
+  function declare() {
+    document.getElementById("invade").style.visibility = "visible";
+    document.getElementById("result").innerHTML = "You have declared war on TOOBOO LAND";
+  }
+
   function invade() {
     document.getElementById("result").innerHTML = "Your troops have begun an offensive into TOOBOO LAND";
     document.getElementById("army").style.visibility = "hidden";
