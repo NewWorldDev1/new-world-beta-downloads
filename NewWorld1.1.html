@@ -1,0 +1,397 @@
+<h1>New World <img src="logo.jpg" width="50" height="50"></h1> 
+
+<h4> Kingdom of North Montagne</h4>
+
+<p></p>
+
+
+<div style = "position:relative; left:0px; top:100px; ">
+         <button onclick="resources()">Show resources</button>
+         <p id = "resources">-</p>
+         <button onclick="buildings()">Show buildings</button>
+         <p id = "buildings">-</p>
+      </div>
+
+<div style = "position:relative; left:0px; top:250px; ">
+         <img src="sawmill.jpg" width="120" height="120">
+      </div>
+<div style = "position:relative; left:0px; top:255px; ">
+  <button onclick="sawmill()">Build Saw Mill</button>
+      
+      </div>
+
+<div style = "position:relative; left:150px; top:110px; ">
+         <img src="quarry.jpg" width="120" height="120">
+      </div>
+<div style = "position:relative; left:150px; top:115px; ">
+  <button onclick="quarry()">Build Quarry</button>
+      
+      </div>
+
+<div style = "position:relative; left:300px; top:-30px; ">
+         <img src="farm.jpg" width="120" height="120">
+      </div>
+<div style = "position:relative; left:300px; top:-25px; ">
+  <button onclick="farms()">Build Farm</button>
+      
+      </div>
+
+<div style = "position:relative; left:0px; top:50px; ">
+         <img src="ironmine.jpg" width="120" height="120">
+      </div>
+<div style = "position:relative; left:0px; top:55px; ">
+  <button onclick="ironmines()">Build Iron Mine</button>
+      
+      </div>
+
+<div style = "position:relative; left:150px; top:-90px; ">
+         <img src="oildrill.jpg" width="120" height="120">
+      </div>
+<div style = "position:relative; left:150px; top:-85px; ">
+  <button onclick="oildrills()">Build Oil Drill</button>
+      
+      </div>
+
+<div style = "position:relative; left:300px; top:-230px; ">
+         <img src="sugar.jpg" width="120" height="120">
+      </div>
+<div style = "position:relative; left:300px; top:-225px; ">
+  <button onclick="">Build Sugar Plantation - COMING IN VERSION 1.2</button>
+      
+      </div>
+
+
+<div style = "position:relative; left:800px; top:-450px; ">
+         <img src="dam.jpg" width="120" height="120">
+      </div>
+<div style = "position:relative; left:800px; top:-445px; ">
+  <button onclick="">Build Dam - COMING IN VERSION 1.2 </button>
+      
+      </div>
+
+
+
+
+
+<script>
+  var pop = 10000;
+  var money = 5000000;
+  var forest = 5000;
+  var wood = 2000;
+  var stone = 1000;
+  var food = 3000;
+  var iron = 0;
+  var oil = 0;
+
+  var sawmills = 0;
+  var quarries = 0;
+  var farm = 5;
+  var ironmine = 0;
+  var oildrill = 0;
+
+  var soldier = 100;
+ 
+</script>
+
+
+
+<script>
+  function sawmill() {
+  sawmills =(sawmills + 1)
+  stone = (stone - 1000)
+  money = (money - 1500000)
+
+</script>
+
+<script>
+  function quarry() {
+  quarries =(quarries + 1)
+  wood = (wood - 2000)
+  money = (money - 1500000)
+}
+</script>
+
+<script>
+  function farms() {
+  farm =(farm + 1)
+  wood = (wood - 800)
+  money = (money - 500000)
+}
+</script>
+
+<script>
+  function ironmines() {
+  ironmine =(ironmine + 1)
+  wood = (wood - 3000)
+  stone = (stone - 1000)
+  money = (money - 3500000)
+}
+</script>
+
+<script>
+  function oildrills() {
+  oildrill =(oildrill + 1)
+  iron = (iron - 1500)
+  money = (money - 4000000)
+}
+</script>
+
+
+  
+ 
+<script>
+setInterval(function() {  
+      pop = (pop + pop * 0.01)
+      money = (money + pop * 150)
+      wood = (wood + sawmills * 300)
+      forest = (forest - sawmills * 2)
+      stone = (stone + quarries * 300)
+      food = (food + farm * 300 - pop / 7)
+      iron = (iron + ironmine * 300)
+      oil = (oil + oildrill * 300)}, 60000);
+</script>
+
+
+
+
+
+</script>
+
+<script>
+  function resources() {
+      document.getElementById("resources").innerHTML = " Population: " + Math.round(pop) + " Money: " + Math.round(money) + " Forest: " + Math.round(forest) + " Wood: " + Math.round(wood) + " Stone: " + Math.round(stone) + " Food: " + Math.round(food) + " Iron: " + Math.round(iron) + " Oil: " + Math.round(oil);
+}
+</script>
+
+<script>
+  function buildings() {
+      document.getElementById("buildings").innerHTML = " Sawmills: " + sawmills + " Quarry: " + quarries + " Farmland: " + farm + " Iron Mines: " + ironmine + " Oil Drills: " + oildrill;
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style = "position:relative;  background:yellow; left:3px; top:200px">
+  <b>Military</b>
+      </div>
+
+<style>
+.triangle-up {
+	width: 2px;
+	height: 2px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 7px solid yellow;
+}
+.square {
+  height: 10px;
+  width: 10px;
+  border: 2px solid black;
+  background-color: red;
+}
+.square1 {
+  height: 10px;
+  width: 10px;
+  border: 2px solid black;
+  background-color: blue;
+}
+</style>
+
+<div style = "position:relative; left:5px; top:310px; ">
+         <img src="infantry4.jpg" width="90" height="90">
+      </div>
+<div style = "position:relative; left:0px; top:315px; ">
+  <button onclick="recruit()">Recruit 100 soldiers </button>
+      </div>
+<div style = "position:relative; left:0px; top:335px; ">
+  <p id="army">-</p>
+      </div>
+
+<script>
+  function recruit() {
+    soldier = (soldier + 100);
+    money = (money - 2500000);
+    pop = (pop - 100);
+    document.getElementById("army").innerHTML = " Troops: " + soldier;
+}
+</script>
+
+
+<div style = "position:relative;   left:3px; top:400px">
+  <img src="Beta1.1map.jpg" width="700" height="700">
+</div>
+<div style = "position:relative; left:290px; top:10px">
+  <div class="square1" id="prov11"></div>
+  
+      </div>
+<div style = "position:relative;   left:230px; top:20px">
+  <div class="square" id="prov21"></div>
+  <div class="square" id="prov21"></div>
+  
+      </div>
+<div style = "position:relative;   left:230px; top:6px">
+  <div class="square1" id="prov12"></div>
+  
+  
+      </div>
+<div style = "position:relative; left:290px; top:-42px; ">
+  <div class="triangle-up" id="army"></div>
+      
+      </div>
+<div style = "position:relative;   left:232px; top:-5px">
+  <div class="triangle-up" id="army1"></div>
+
+      </div>
+
+
+<div style = "position:relative; left:5px; top:400px; ">
+  <button onclick="invade()" id="invade">Invade</button>
+  <p id="fort"><button onclick="fortassault()">Assault Fort</button></p>
+  <p id="result">---</p>
+      
+      </div>
+
+<div style = "position:relative; left:5px; top:700px; ">
+  <p id="a"> <button onclick="burn()">Burn Native Village</button> <button onclick="hunt()">Hunt down rebel bases</button></p>
+  
+      
+</div>
+
+
+
+<script>
+  document.getElementById("army1").style.visibility = "hidden";
+  document.getElementById("fort").style.visibility = "hidden";
+  document.getElementById("prov12").style.visibility = "hidden";
+  document.getElementById("a").style.visibility = "hidden";
+
+  
+  
+  
+  
+
+</script>
+
+<script>
+  function invade() {
+    document.getElementById("result").innerHTML = "Your troops have begun an offensive into TOOBOO LAND";
+    document.getElementById("army").style.visibility = "hidden";
+    setTimeout(function(){
+      document.getElementById("army1").style.visibility = "visible";
+      document.getElementById("result").innerHTML = "-VICTORY- Friendly Casulties: 75 / Enemy Casulties: 300";
+      document.getElementById("fort").style.visibility = "visible";
+      document.getElementById("invade").style.visibility = "hidden";
+}, 3000); 
+  
+}
+</script>
+
+
+
+<script>
+  function fortassault() {
+    document.getElementById("result").innerHTML = "Your troops have begun an assault on an enemey border fort";
+    setTimeout(function(){
+      document.getElementById("result").innerHTML = "-FORT CAPTURED- Friendly Casulties: 100 / Enemy Casulties: 50";
+      document.getElementById("prov12").style.visibility = "visible";
+      document.getElementById("fort").style.visibility = "hidden";
+      document.getElementById("result").style.visibility = "hidden";
+      alert("The king of Tooboo land AldiManager7 has surrendered and you have annexed 5000 km2 of their southern land");
+      return rebels();
+      
+
+       
+}, 3000); 
+}
+
+</script>
+
+
+
+
+
+
+
+
+<script>
+  function rebels() {
+      pop = (pop + 7000);
+      forest = (forest + 5000);
+      farm = (farm + 5);
+      document.getElementById("event").innerHTML = "The enemey general NuttyTaker2 has fled into the forest with 200 men to start a rebellion you can keep track of this in the REBELLION TAB";
+     return unrest();
+    
+}  
+</script>
+
+<div style = "position:relative; background:yellow; left:5px; top:480px; ">
+  Rebelllion and Goverment          
+</div>
+
+<div style = "position:relative; left:5px; top:490px; ">
+  <p id="event"><b></b></p>
+  <p id="a"></p>
+  
+  
+         
+</div>
+
+
+<script>
+  function unrest() { 
+    
+    setTimeout(function(){
+      document.getElementById("a").style.visibility = "visible";
+      document.getElementById("event").innerHTML = " NuttyTaker2's men have ambushed one of your armies patrols in South Toobooland killing 24 men";
+      alert("Rebel attack see REBELION TAB");
+      
+      
+}, 30000); 
+    
+}
+
+
+function burn() {
+  document.getElementById("event").innerHTML = " Your men have burned a Tooboolander village in retaliation for their rebellion  /  200 civlians killed and one farm destroyed";
+  pop = (pop - 200);
+  farm = (farm - 1);
+    
+}
+
+function hunt() {
+  document.getElementById("event").innerHTML = " Your toops have begun searching the forest for rebel positions";
+  document.getElementById("a").style.visibility = "hidden";
+  
+
+  setTimeout(function(){
+      document.getElementById("event").innerHTML = " Your soldiers have discovered a rebel weapons cash and captured it  /  Friendly Casulties: 9  Prisoners Captured: 90  /  NuttyTaker2, Toxicgaster and CT721560 have been executed for leading the rebellion";
+    alert("Rebel Base captured see REBELION TAB");
+      
+      
+}, 42000); 
+
+  
+    
+}
+  
+</script>
+
+
+<div style = "position:relative; left:5px; top:2000px; ">
+  The end
+  
+         
+      </div>
+      
